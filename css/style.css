@@ -1,3 +1,25 @@
+:root{
+    --white:#fff;
+    --neon-green:#53FFAB;
+    --dark-blue: #202632;
+    --dark-grayish-blue:#313A49;
+    --light-blue:#c0d9ff;
+    --blue:#70A4FF;
+}
+:root[data-theme="dark"]{
+    --color-bg-body:var(--dark-blue);
+    --color-bg-card:var(--dark-grayish-blue);
+    --color-blue:var(--neon-green);
+    --color-quote:var(--white);
+    --color-footer:var(--white);
+}
+:root[data-theme="light"]{
+    --color-bg-body:var(--light-blue);
+    --color-bg-card:var(--white);
+    --color-blue:var(--blue);
+    --color-quote:var(--dark-blue);
+    --color-footer: var(--dark-blue);
+}
 body{
     height: 100vh;
     display:flex;
@@ -8,12 +30,12 @@ body{
     font-size: 1.75rem;
     font-weight: 800;
     line-height: 1.5;
-    background-color: #202632;
-    color:#fff;
+    background-color: var(--color-bg-body);
+    color:var(--color-quote);
 }
 .card {
     flex-shrink: 0;
-    background-color:#313A49;
+    background-color:var(--color-bg-card);
     width: 90%;
     max-width: 33.75rem;
     border-radius: 10px;
@@ -30,7 +52,7 @@ body{
     line-height: normal;
     letter-spacing: 0.21606em;
     text-transform: uppercase;
-    color: #53FFAB;
+    color: var(--color-blue);
 }
 .card__quote {
     margin-bottom: 24px;
@@ -47,7 +69,7 @@ body{
     border: 0;
     border-radius: 50%;
     line-height: 1;
-    background-color:#53FFAB;
+    background-color:var(--color-blue);
     cursor: pointer;
     transform: translateX(-50%);
     left: 50%;
@@ -55,14 +77,14 @@ body{
 }
 .card__dice-button-icon {
     font-size: 25px;
-    color:#202632;
+    color:var(--color-bg-card);
 }
 .card__dice-button:hover{
-    filter: drop-shadow(0px 0px 40px #53FFAB);
+    filter: drop-shadow(0px 0px 40px var(--color-blue));
     transition: all 0.3s ease-in;
 }
 .card__dice-button:focus{
-    outline: 2px dashed #53FFAB;
+    outline: 2px dashed var(--color-blue);
     outline-offset: 2px;
 }
 .card__dice-button:active{
@@ -73,7 +95,16 @@ footer{
     margin: 0 auto;
     position: relative;
     bottom:1rem;
+    color:var(--color-footer);
 }
 footer a{
-    color:#53FFAB;
+    color:var(--color-blue);
+}
+.theme-btn{
+    color: var(--color-quote);
+    position: absolute; 
+    right: 15px;
+    top: 15px;
+    font-size: 35px;
+    cursor: pointer;
 }
